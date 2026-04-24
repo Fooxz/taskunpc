@@ -1,12 +1,19 @@
-function TareaCard({ titulo, materia, fecha, completada }) {
+function TareaCard({ id, titulo, materia, fecha, completada, onToggle }) {
   return (
     <div style={{ border: "1px solid gray", padding: "10px", margin: "10px" }}>
       <h3>{titulo}</h3>
       <p>{materia}</p>
       <p>{fecha}</p>
+
       <span>
         {completada ? "✅ Completada" : "⏳ Pendiente"}
       </span>
+
+      <br />
+
+      <button onClick={() => onToggle(id)}>
+        Cambiar estado
+      </button>
     </div>
   );
 }

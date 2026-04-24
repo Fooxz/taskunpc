@@ -1,11 +1,14 @@
-import { tareasIniciales } from "../data/tareas";
 import TareaCard from "./TareaCard";
 
-function ListaTareas() {
+function ListaTareas({ tareas, onToggle }) {
   return (
     <div>
-      {tareasIniciales.map(tarea => (
-        <TareaCard key={tarea.id} {...tarea} />
+      {tareas.map(tarea => (
+        <TareaCard
+          key={tarea.id}
+          {...tarea}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );
