@@ -1,6 +1,6 @@
 import TareaCard from "./TareaCard";
 
-function ListaTareas({ tareas, onToggle }) {
+function ListaTareas({ tareas, onToggle, onEliminar }) {
   return (
     <div>
       {tareas.map(tarea => (
@@ -8,6 +8,7 @@ function ListaTareas({ tareas, onToggle }) {
           key={tarea.id}
           {...tarea}
           onToggle={onToggle}
+          onEliminar={onEliminar}
         />
       ))}
     </div>
